@@ -15,7 +15,7 @@ enum Season {
 public class Seasons {
     public static void main(String[] args) {
         for(Season season : Season.values()) {
-            System.out.println(season + " average temperature: " + season.getAverageTemperature() + "°C");
+            System.out.println(season + " average temperature:" + season.getAverageTemperature() + "°C");
         }
     }
 }
