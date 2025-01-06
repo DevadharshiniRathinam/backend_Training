@@ -1,7 +1,7 @@
 package Day6.JavaLangClass;
 
 public class JavaLang {
-    public static void main(StringClass[] args) {
+    public static void main(String[] args) {
         System.out.println("Math class");
         System.out.println("square root:"+Math.sqrt(2));
         System.out.println("power value:"+Math.pow(2, 5));
