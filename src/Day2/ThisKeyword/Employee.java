@@ -1,4 +1,4 @@
-package Day2.thisKeyword;
+package Day2.ThisKeyword;
 
 public class Employee {
     int id;

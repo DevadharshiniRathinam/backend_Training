@@ -1,4 +1,4 @@
-package Day2.thisKeyword;
+package Day2.ThisKeyword;
 
 public class Calculator {
     void add(int a,int b)

@@ -1,4 +1,4 @@
-package Day3.inheritance2;
+package Day3.Inheritance2;
 class Animal {
     public void sound() {
         System.out.println("Animal makes a sound");

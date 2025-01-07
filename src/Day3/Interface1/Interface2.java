@@ -1,4 +1,4 @@
-package Day3.interface1;
+package Day3.Interface1;
 
 interface Constants {
     double PI = 3.14;

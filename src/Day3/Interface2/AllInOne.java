@@ -1,4 +1,4 @@
-package Day3.interface2;
+package Day3.Interface2;
 
 interface Printer {
     void print();

@@ -1,4 +1,4 @@
-package Day5.shapes1;
+package Day5.Shapes1;
 import Day5.Shapes.*;
 public class Main {
     public static void main(String[] args) {

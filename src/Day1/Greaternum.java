@@ -2,7 +2,7 @@ package Day1;
 
 import java.util.Scanner;
 
-public class greaternum {
+public class Greaternum {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
