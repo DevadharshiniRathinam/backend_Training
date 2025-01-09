@@ -13,7 +13,7 @@ class Circle implements Constants {
         System.out.println("Area of Circle: " + area);
     }
 }
-public class interface2 {
+public class Interface2 {
     public static void main(String[] args) {
         Circle circle = new Circle(5);
         circle.calculateArea();

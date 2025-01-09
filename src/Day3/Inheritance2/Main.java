@@ -30,7 +30,7 @@ class Square extends Shape {
     }
 }
 
-public class main {
+public class Main{
     public static void main(String[] args) {
         Shape s = new Shape();
         s.Area();
