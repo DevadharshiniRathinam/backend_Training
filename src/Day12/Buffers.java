@@ -3,10 +3,10 @@ import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 public class Buffers {
     public static void main(String[] args) {
-        ByteBuffer buffer = ByteBuffer.allocate(10);
-        buffer.putInt(10);
-        buffer.flip();
-        System.out.println(buffer.getInt());
+        ByteBuffer buffers = ByteBuffer.allocate(10);
+        buffers.putInt(10);
+        buffers.flip();
+        System.out.println(buffers.getInt());
         CharBuffer charBuffer = CharBuffer.allocate(20);
         charBuffer.put("Hello World");
         charBuffer.flip();

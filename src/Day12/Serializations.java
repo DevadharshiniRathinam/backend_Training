@@ -2,7 +2,7 @@ package Day12;
 
 import java.io.*;
 
-public class Serialization implements Serializable {
+public class Serializations implements Serializable {
     private String name;
     private int age;
     public void setName(String name) {
@@ -16,7 +16,7 @@ public class Serialization implements Serializable {
     }
     public static void main(String[] args) {
         String fileName = "person.ser";
-        Serialization person = new Serialization();
+        Serializations person = new Serializations();
         person.setName("Devadharshini");
         person.setAge(22);
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileName))) {
@@ -27,7 +27,7 @@ public class Serialization implements Serializable {
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-            Serialization deserializedPerson = (Serialization) ois.readObject();
+            Serializations deserializedPerson = (Serializations) ois.readObject();
             System.out.println( deserializedPerson);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

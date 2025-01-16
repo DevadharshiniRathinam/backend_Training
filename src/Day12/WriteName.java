@@ -3,7 +3,7 @@ package Day12;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WritingName {
+public class WriteName {
     public static void main(String[] args) {
         String fileName = "Deva.txt";
         try  {

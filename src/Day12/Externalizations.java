@@ -2,7 +2,7 @@ package Day12;
 
 import java.io.*;
 
-public class Externalization implements Externalizable {
+public class Externalizations implements Externalizable {
     private String name;
     private int age;
     public void setName(String name) {
@@ -27,7 +27,7 @@ public class Externalization implements Externalizable {
     public static void main(String[] args) {
         String fileName = "simplePerson.ser";
 
-        Externalization person = new Externalization();
+        Externalizations person = new Externalizations();
         person.setName("Devadharshini");
         person.setAge(22);
 
@@ -39,7 +39,7 @@ public class Externalization implements Externalizable {
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-            Externalization deserializedPerson = new Externalization();
+            Externalizations deserializedPerson = new Externalizations();
             deserializedPerson.readExternal(ois);
             System.out.println("Deserialized: " + deserializedPerson);
         } catch (IOException | ClassNotFoundException e) {

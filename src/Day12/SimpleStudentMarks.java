@@ -5,8 +5,8 @@ import java.sql.*;
 public class SimpleStudentMarks {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/SchoolDB";
-        String user = "root";
-        String password = "yourpassword";
+        String user = "deva";
+        String password = "mysql";
         String query = "INSERT INTO StudentMarks (name, roll_no, marks) VALUES (?, ?, ?)";
 
         try {
