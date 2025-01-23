@@ -1,4 +1,3 @@
-package Day_17.Method_reference;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,7 +7,7 @@ public class InstanceMethod {
     InstanceMethod() {
                List<String> str = new ArrayList<>(List.of("Apple", "Banana", "grape", "apple", "Pineapple", "banana"));
 
-        Collections.sort(str, (s1, s2) -> s1.compareToIgnoreCase(s2));
+        Collections.sort(str,String::compareToIgnoreCase);
       
         for (String str1 : str) {
             System.out.println(str1);
@@ -16,6 +15,6 @@ public class InstanceMethod {
     }
 
     public static void main(String[] args) {
-        new InstanceMethodAlternative();
+        new InstanceMethod();
     }
 }
