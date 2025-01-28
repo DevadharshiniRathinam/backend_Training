@@ -2,10 +2,10 @@ package Day19;
 
 import java.util.concurrent.*;
 
-public class FactorialTasks implements Callable<Long> {
+public class FactorialTask implements Callable<Long> {
     long num;
 
-    public FactorialTasks(long num) {
+    public FactorialTask(long num) {
         this.num = num;
     }
 
@@ -19,8 +19,8 @@ public class FactorialTasks implements Callable<Long> {
     }
 
     public static void main(String[] args)  {
-        ExecutorService executor = Executors.newFixedThreadPool(1);
-        Callable<Long> c = new FactorialTasks(5);
+        ExecutorService executor = Executor.newFixedThreadPool(1);
+        Callable<Long> c = new FactorialTask(5);
         Future<Long> f = executor.submit(c);
         try {
             System.out.println("Factorial value: " + f.get());

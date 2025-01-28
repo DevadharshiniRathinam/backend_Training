@@ -1,6 +1,6 @@
 import java.util.concurrent.CompletableFuture;
 
-public class Completables {
+public class Completable {
     public static void main(String[] args) {
         CompletableFuture<String> t1 =  CompletableFuture.supplyAsync(() -> {
             try {

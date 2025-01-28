@@ -2,7 +2,7 @@ package Day19;
 
 import java.util.concurrent.ExecutorService;
 
-public class Executors {
+public class Executor {
     public static void main(String[] args) {
         ExecutorService executorService = java.util.concurrent.Executors.newFixedThreadPool(5);
 
