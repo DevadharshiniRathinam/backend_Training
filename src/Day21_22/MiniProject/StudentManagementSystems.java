@@ -1,4 +1,4 @@
-package MiniProject;
+package Day21_22.MiniProject;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -7,7 +7,6 @@ import java.util.*;
 import java.io.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Student {
     int id;
@@ -73,9 +72,9 @@ class Student {
     }
 
 }
-public  class StudentManagementSystem
+public  class StudentManagementSystems
 {   // store data in csv file
-    private static final String FILE_PATH = "students.csv";
+    private static final String FILE_PATH = "students1.csv";
     public static void saveData(List<Student> studentDetails) {
         try (FileWriter writer = new FileWriter(FILE_PATH, false);
              BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
@@ -110,7 +109,7 @@ public  class StudentManagementSystem
 
 
     public static void main(String[] args) {
-        StudentManagementSystem studentManagementSystem=new StudentManagementSystem();
+        StudentManagementSystems studentManagementSystem=new StudentManagementSystems();
         Scanner s=new Scanner(System.in);
         List<Student> studentDetails=new ArrayList<Student>();
         loadData(studentDetails);
@@ -207,58 +206,73 @@ public  class StudentManagementSystem
                     }
                     break;
                 //Update
+
                 case 4:
                     System.out.println("Enter the ID to update:");
                     int id_search = s.nextInt();
-                    //Optional
-                    Optional<Student> studentobj = studentDetails.stream().filter((id3) -> id3.getId()==(id_search)).findFirst();
+                    s.nextLine();
+
+                    Optional<Student> studentobj = studentDetails.stream()
+                            .filter(student -> student.getId() == id_search)
+                            .findFirst();
+
                     if (studentobj.isPresent()) {
-                        System.out.println("Enter the place to update NAME,AGE,GRADE,EMAIL:");
-                        s.nextLine();
-                        String value_update = s.nextLine();
+                        System.out.println("Enter the field to update (NAME, AGE, GRADE, EMAIL):");
+                        String value_update = s.nextLine().toUpperCase();
+
                         Student object = studentobj.get();
+
                         switch (value_update) {
                             case "NAME":
-                                System.out.println("Enter the name:");
+                                System.out.println("Enter the new name:");
                                 String name2 = s.nextLine();
                                 object.setName(name2);
-                                System.out.println("Sccessfully updated");
-                                break;
-                            case "AGE":
-                                System.out.println("Enter the age:");
-                                int age2 = s.nextInt();
-                                object.setAge(age2);
-                                System.out.println("Sccessfully updated");
-                                break;
-                            case "GRADE":
-                                System.out.println("Enter the grade:");
-                                char grade2 = s.next().charAt(0);
-                                object.setGrade(grade2);
-                                System.out.println("Sccessfully updated");
-                                break;
-                            case "EMAIL":
-                                System.out.println("Enter the email:");
-                                String email2 = null;
-                                String emailRegex = "^[a-zA-Z0-9][a-zA-Z0-9._-]*@[a-zA-Z0-9.-]+\\.(com|org|net)$";
-                                boolean emailvalue1 = true;
-                                while (emailvalue1) {
-                                    email2 = s.nextLine();
-                                    if (email2.matches(emailRegex)) {
-                                        emailvalue1 = false;
-                                    } else {
-                                        System.out.println(": Invalid ,enter the valid Email");
-                                    }
-                                }
-                                saveData(studentDetails);object.setEmail(email2);
-                                saveData(studentDetails);
-                                System.out.println("Sccessfully updated");
+                                System.out.println("Successfully updated");
                                 break;
 
+                            case "AGE":
+                                System.out.println("Enter the new age:");
+                                int age2 = s.nextInt();
+                                s.nextLine();
+                                object.setAge(age2);
+                                System.out.println("Successfully updated");
+                                break;
+
+                            case "GRADE":
+                                System.out.println("Enter the new grade:");
+                                char grade2 = s.next().charAt(0);
+                                s.nextLine();
+                                object.setGrade(grade2);
+                                System.out.println("Successfully updated");
+                                break;
+
+                            case "EMAIL":
+                                System.out.println("Enter the new email:");
+                                String email2;
+                                String emailRegex = "^[a-zA-Z0-9][a-zA-Z0-9._-]*@[a-zA-Z0-9.-]+\\.(com|org|net)$";
+                                boolean emailValid = false;
+
+                                while (!emailValid) {
+                                    email2 = s.nextLine();
+                                    if (email2.matches(emailRegex)) {
+                                        object.setEmail(email2);
+                                        emailValid = true;
+                                    } else {
+                                        System.out.println("Invalid email. Enter a valid email:");
+                                    }
+                                }
+                                System.out.println("Successfully updated");
+                                break;
+
+                            default:
+                                System.out.println("Invalid field name!");
                         }
+                        saveData(studentDetails);
                     } else {
                         System.out.println("There is no such ID");
                     }
                     break;
+
                 // delete
                 case 5:
                     System.out.println("Enter a Id to delete:");
